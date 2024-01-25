@@ -5,7 +5,6 @@
     <p><%= image_tag user.get_profile_image(100,100) %></p>
     <h2>name</h2>
     <p><%= user.name %></p>
-    <h2>Opinion</h2>
     <p><%= link_to "show", user_path(user.id) %></p>
   </div>
 <% end %>

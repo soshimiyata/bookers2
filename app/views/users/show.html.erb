@@ -1,14 +1,12 @@
 <div>
   <%= flash[:notice] %>
 </div>
-
 <%= render 'books/userinfo', user: @user %>
 <% @books.each do |book| %>
-  <div>
     <h1>Books</h1>
-    <p><%= image_tag book.user.get_profile_image(100,100) %></p>
+    <p><%= image_tag @user.get_profile_image(100,100) %></p>
     <h2>Title</h2>
     <p><%= link_to book.title, book_path(book.id) %></p>
     <h2>Opinion</h2>
     <p><%= book.body %></p>
-  </div>
+<% end %>
