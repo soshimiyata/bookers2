@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update]
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
