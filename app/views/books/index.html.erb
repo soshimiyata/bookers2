@@ -6,14 +6,21 @@
     <% end %>
   </ul>
 <% end %>
-
-<%= render 'books/userinfo', user: @user %>
-<% @books.each do |book| %>
-  <div>
-<p><%= image_tag book.user.get_profile_image(100,100) %></p>
-    <h2>Title</h2>
-    <p><%= link_to book.title, book_path(book.id) %></p>
-    <h2>Opinion</h2>
-    <p><%= book.body %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/userinfo', user: @user %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <% @books.each do |book| %>
+      <ul>
+        <p><%= image_tag book.user.get_profile_image(100,100) %></p>
+        <h2>Title</h2>
+        <p><%= link_to book.title, book_path(book.id) %></p>
+        <h2>Opinion</h2>
+        <p><%= book.body %></p>
+      </ul
+    </div>
   </div>
+</div>
 <% end %>
